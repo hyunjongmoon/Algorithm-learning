@@ -4,7 +4,7 @@
 using namespace std;
 
 bool compare(int a, int b) {
-	return a > b; // a < b ÀÌ¸é ¿À¸§Â÷¼øÀÌ°í, sortÇÔ¼ö default ¿À¸§Â÷¼øÀÌ´Ù. 
+	return a > b; // a < b ì´ë©´ ì˜¤ë¦„ì°¨ìˆœì´ê³ , sortí•¨ìˆ˜ default ì˜¤ë¦„ì°¨ìˆœì´ë‹¤. 
 }
 
 int main(void) {
