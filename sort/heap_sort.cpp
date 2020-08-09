@@ -4,7 +4,7 @@ int number = 9;
 int heap[9] = {7, 6, 5, 8, 3, 5, 9, 1, 6};
 
 int main(void) {
-	// ¸ÕÀú ÀüÃ¼ Æ®¸® ±¸Á¶¸¦ ÃÖ´ë Èü ±¸Á¶·Î ¹Ù²Û´Ù.  
+	// ë¨¼ì € ì „ì²´ íŠ¸ë¦¬ êµ¬ì¡°ë¥¼ ìµœëŒ€ í™ êµ¬ì¡°ë¡œ ë°”ê¾¼ë‹¤.  
 	for(int i = 1; i < number; i++) {
 		int c = i;
 		do {
@@ -17,7 +17,7 @@ int main(void) {
 			c = root;
 		} while (c != 0);
 	} 
-	// Å©±â¸¦ ÁÙ¿©°¡¸ç ¹İº¹ÀûÀ¸·Î ÈüÀ» ±¸¼º
+	// í¬ê¸°ë¥¼ ì¤„ì—¬ê°€ë©° ë°˜ë³µì ìœ¼ë¡œ í™ì„ êµ¬ì„±
 	for(int i = number - 1; i >= 0; i--) {
 		int temp = heap[0];
 		heap[0] = heap[i];
@@ -26,17 +26,17 @@ int main(void) {
 		int c = 1;
 		do {
 			c = 2 * root + 1;
-			// ÀÚ½Ä Áß¿¡ ´õ Å« °ªÀ» Ã£±â
+			// ìì‹ ì¤‘ì— ë” í° ê°’ì„ ì°¾ê¸°
 			if(heap[c] < heap[c + 1] && c < i - 1) {
 				c++;
 			} 
-			// ·çÆ®º¸´Ù ÀÚ½ÄÀÌ ´õ Å©´Ù¸é ±³È¯
+			// ë£¨íŠ¸ë³´ë‹¤ ìì‹ì´ ë” í¬ë‹¤ë©´ êµí™˜
 			if(heap[root] < heap[c] && c < i) {
 				int temp = heap[root];
 				heap[root] = heap[c];
 				heap[c] = temp;
 			} 
-			root = c;  // Àç±ÍÀû Èü ±¸Á¶  
+			root = c;  // ì¬ê·€ì  í™ êµ¬ì¡°  
 		} while (c < i);
 	} 
 	for(int i = 0; i < number; i++) {
