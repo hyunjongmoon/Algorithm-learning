@@ -11,7 +11,7 @@ class Student {
 		this->name = name;
 		this->score = score;
 	}
-	// Á¤·Ä ±âÁØÀº 'Á¡¼ö°¡ ÀÛÀº ¼ø¼­'
+	// ì •ë ¬ ê¸°ì¤€ì€ 'ì ìˆ˜ê°€ ìž‘ì€ ìˆœì„œ'
 	bool operator < (Student &student) {
 		return this->score < student.score;
 	} 
@@ -19,11 +19,11 @@ class Student {
 
 int main(void) {
 	Student students[] = {
-		Student("¹®ÇöÁ¾ ", 90),
-		Student("±èÀº¼º ", 93),
-		Student("¹ÚÁØÅÂ ", 96),
-		Student("È²Ã¢¿í ", 92),
-		Student("°­¸í¼ö ", 87) 
+		Student("ë¬¸í˜„ì¢… ", 90),
+		Student("ê¹€ì€ì„± ", 93),
+		Student("ë°•ì¤€íƒœ ", 96),
+		Student("í™©ì°½ìš± ", 92),
+		Student("ê°•ëª…ìˆ˜ ", 87) 
 	};
 	sort(students, students + 5);
 	for(int i = 0; i < 5; i++) {
