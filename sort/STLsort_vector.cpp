@@ -6,11 +6,11 @@ using namespace std;
 
 int main(void) {
 	vector<pair<int, string> > v;
-	v.push_back(pair<int, string>(90, "¹ÚÁØÅÂ "));
-	v.push_back(pair<int, string>(85, "±èÀº¼º "));
-	v.push_back(pair<int, string>(82, "¹®ÇöÁ¾ "));
-	v.push_back(pair<int, string>(98, "È²Ã¢¿í "));
-	v.push_back(pair<int, string>(79, "°­¸í¼ö "));
+	v.push_back(pair<int, string>(90, "ë°•ì¤€íƒœ "));
+	v.push_back(pair<int, string>(85, "ê¹€ì€ì„± "));
+	v.push_back(pair<int, string>(82, "ë¬¸í˜„ì¢… "));
+	v.push_back(pair<int, string>(98, "í™©ì°½ìš± "));
+	v.push_back(pair<int, string>(79, "ê°•ëª…ìˆ˜ "));
 	
 	sort(v.begin(), v.end()); 
 	for(int i = 0; i < v.size(); i++) {
