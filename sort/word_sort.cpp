@@ -7,15 +7,15 @@ string a[20000];
 int n;
 
 bool compare(string a, string b) {
-	// ±æÀÌ°¡ ÂªÀº ¼ø¼­ ¿ì¼± 
+	// ê¸¸ì´ê°€ ì§§ì€ ìˆœì„œ ìš°ì„  
 	if(a.length() < b.length()) {
 		return 1;
 	} else if(a.length() > b.length()) {
 		return 0;
 	}
-	// ±æÀÌ°¡ °°Àº °æ¿ì¶ó¸é
+	// ê¸¸ì´ê°€ ê°™ì€ ê²½ìš°ë¼ë©´
 	else {
-		return a < b; // »çÀü¼øÀ¸·Î Á¤·Ä 
+		return a < b; // ì‚¬ì „ìˆœìœ¼ë¡œ ì •ë ¬ 
 	} 
 }
 
