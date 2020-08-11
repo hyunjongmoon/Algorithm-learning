@@ -9,7 +9,7 @@ int n;
 int getSum(string a) {
 	int length = a.length(), sum = 0;
 	for(int i = 0; i < length; i++) {
-		// ¼ıÀÚÀÎ °æ¿ì¿¡¸¸ ´õÇÕ´Ï´Ù.
+		// ìˆ«ìì¸ ê²½ìš°ì—ë§Œ ë”í•©ë‹ˆë‹¤.
 		if(a[i] - '0' <= 9 && a[i] - '0' >= 0) {
 			sum += a[i] - '0';
 		} 
@@ -18,17 +18,17 @@ int getSum(string a) {
 }
 
 bool compare(string a, string b) {
-	// ±æÀÌ°¡ ÂªÀº ¼ø¼­ ¿ì¼± 
+	// ê¸¸ì´ê°€ ì§§ì€ ìˆœì„œ ìš°ì„  
 	if(a.length() < b.length()) {
 		return 1;
 	} else if(a.length() > b.length()) {
 		return 0;
 	}
-	// ±æÀÌ°¡ °°Àº °æ¿ì¶ó¸é
+	// ê¸¸ì´ê°€ ê°™ì€ ê²½ìš°ë¼ë©´
 	else {
 		int aSum = getSum(a);
 		int bSum = getSum(b);
-		// ±ÛÀÚ¿¡ Æ÷ÇÔµÈ ¼ıÀÚÀÇ ÇÕÀÌ ´Ù¸£´Ù¸é
+		// ê¸€ìì— í¬í•¨ëœ ìˆ«ìì˜ í•©ì´ ë‹¤ë¥´ë‹¤ë©´
 		if(aSum != bSum) {
 			return aSum < bSum;
 		} else {
