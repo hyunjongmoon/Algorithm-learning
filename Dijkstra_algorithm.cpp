@@ -3,7 +3,7 @@
 int number = 6;
 int INF = 1000000000;
 
-// ÀüÃ¼ ±×·¡ÇÁ¸¦ ÃÊ±âÈ­ 
+// ì „ì²´ ê·¸ë˜í”„ë¥¼ ì´ˆê¸°í™” 
 int a[6][6] = {
 	{0, 2, 5, 1, INF, INF},  
 	{2, 0, 3, 2, INF, INF},
@@ -13,10 +13,44 @@ int a[6][6] = {
 	{INF, INF, 5, INF, 2, 0}
 };
 
-bool v[6]; // ¹æ¹®ÇÑ ³ëµå 
-int d[6];  // ÃÖ´Ü °Å¸® 
+bool v[6]; // ë°©ë¬¸í•œ ë…¸ë“œ 
+int d[6];  // ìµœë‹¨ ê±°ë¦¬ 
 
-// °¡Àå ÃÖ¼Ò °Å¸®¸¦ °¡Áö´Â Á¤Á¡À» ¹İÈ¯ÇÕ´Ï´Ù.
+// ê°€ì¥ ìµœì†Œ ê±°ë¦¬ë¥¼ ê°€ì§€ëŠ” ì •ì ì„ ë°˜í™˜í•©ë‹ˆë‹¤.
 int getSmallIndex() {
-	
+	int min = INF;
+	int index = 0;
+	for(int i = 0; i < number; i++) {
+		if(d[i] < min && !v[i]) {
+			min = d[i];
+			index = i;
+		}
+	}
+	return index;
 } 
+
+// ë‹¤ìµìŠ¤íŠ¸ë¼ë¥¼ ìˆ˜í–‰í•˜ëŠ” í•¨ìˆ˜
+void dijkstra(int start) {
+	for(int i = 0; i < number; i++) {
+		d[i] = a[start][i];
+	}
+	v[start] = true;
+	for(int i = 0; i < number - 2; i++) {
+		int current = getSmallIndex();
+		v[current] = true;
+		for(int j = 0; j < 6; j++){
+			if(!v[j]) {
+				if(d[current] + a[current][j] < d[j]) {
+				d[j] = d[current] + a[current][j];
+				}
+			}		
+		}
+	}
+} 
+
+int main(void) {
+	dijkstra(0);
+	for(int i = 0; i < number; i++) {
+		printf("%d ", d[i]);
+	}
+}
