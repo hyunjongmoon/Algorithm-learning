@@ -18,31 +18,31 @@ void dfs(int x) {
 }
 
 int main(void) {
-		// 1°ú 2 ¿¬°á 
+		// 1ê³¼ 2 ì—°ê²° 
 	a[1].push_back(2);
 	a[2].push_back(1);
-	// 1°ú 3 ¿¬°á
+	// 1ê³¼ 3 ì—°ê²°
 	a[1].push_back(3);
 	a[3].push_back(1);
-	// 2¿Í 3 ¿¬°á
+	// 2ì™€ 3 ì—°ê²°
 	a[2].push_back(3);
 	a[3].push_back(2);
-	// 2¿Í 4 ¿¬°á
+	// 2ì™€ 4 ì—°ê²°
 	a[2].push_back(4);
 	a[4].push_back(2);
-	// 2¿Í 5 ¿¬°á
+	// 2ì™€ 5 ì—°ê²°
 	a[2].push_back(5);
 	a[5].push_back(2);
-	// 3°ú 6 ¿¬°á
+	// 3ê³¼ 6 ì—°ê²°
 	a[3].push_back(6);
 	a[6].push_back(3);
-	// 3°ú 7 ¿¬°á
+	// 3ê³¼ 7 ì—°ê²°
 	a[3].push_back(7);
 	a[7].push_back(3);
-	// 4¿Í 5 ¿¬°á
+	// 4ì™€ 5 ì—°ê²°
 	a[4].push_back(5);
 	a[5].push_back(4);
-	// 6°ú 7 ¿¬°á
+	// 6ê³¼ 7 ì—°ê²°
 	a[6].push_back(7);
 	a[7].push_back(6);
 	
