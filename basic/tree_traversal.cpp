@@ -4,14 +4,14 @@ using namespace std;
 
 int number = 15;
 
-// ÇÏ³ªÀÇ ³ëµå Á¤º¸¸¦ ¼±¾ğÇÕ´Ï´Ù. 
+// í•˜ë‚˜ì˜ ë…¸ë“œ ì •ë³´ë¥¼ ì„ ì–¸í•©ë‹ˆë‹¤. 
 typedef struct node *treePointer;
 typedef struct node {
 	int data;
 	treePointer leftChild, rightChild;
 } node;
 
-// ÁßÀ§ ¼øÈ¸¸¦ ±¸ÇöÇÕ´Ï´Ù.
+// ì¤‘ìœ„ ìˆœíšŒë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
 void inorder(treePointer ptr) {
 	if(ptr) {
 		inorder(ptr->leftChild);
@@ -20,7 +20,7 @@ void inorder(treePointer ptr) {
 	}
 }
 
-// ÈÄÀ§ ¼øÈ¸¸¦ ±¸ÇöÇÕ´Ï´Ù.
+// í›„ìœ„ ìˆœíšŒë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
 void postorder(treePointer ptr) {
 	if(ptr) {
 		postorder(ptr->leftChild);
@@ -29,7 +29,7 @@ void postorder(treePointer ptr) {
 	}
 }
 
-// ÀüÀ§ ¼øÈ¸¸¦ ±¸ÇöÇÕ´Ï´Ù.
+// ì „ìœ„ ìˆœíšŒë¥¼ êµ¬í˜„í•©ë‹ˆë‹¤.
 void preorder(treePointer ptr) {
 	if(ptr) {
 		cout << ptr->data << ' ';
@@ -53,15 +53,15 @@ int main(void) {
 			nodes[i / 2].rightChild = &nodes[i];
 		}
 	}
-	printf("ÀüÀ§ ¼øÈ¸ : ");
+	printf("ì „ìœ„ ìˆœíšŒ : ");
 	preorder(&nodes[1]);
 	printf("\n");
 	
-	printf("ÁßÀ§ ¼øÈ¸ : ");
+	printf("ì¤‘ìœ„ ìˆœíšŒ : ");
 	inorder(&nodes[1]);
 	printf("\n");
 	
-	printf("ÈÄÀ§ ¼øÈ¸ : ");
+	printf("í›„ìœ„ ìˆœíšŒ : ");
 	postorder(&nodes[1]);
 	return 0;
 }
