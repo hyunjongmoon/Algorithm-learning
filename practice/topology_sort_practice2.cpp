@@ -10,21 +10,21 @@ vector<int> a[MAX];
 
 void topologySort() {
 	queue<int> q;
-	// ÁøÀÔ Â÷¼ö°¡ 0ÀÎ ³ëµå¸¦ Å¥¿¡ »ðÀÔ 
+	// ì§„ìž… ì°¨ìˆ˜ê°€ 0ì¸ ë…¸ë“œë¥¼ íì— ì‚½ìž… 
 	for(int i = 1; i <= n; i++) {
 		if(inDegree[i] == 0) {
 			result[i] = time[i];
 			q.push(i);
 		}
 	}	 
-	// Á¤·ÄÀÌ ¿ÏÀüÈ÷ ¼öÇàµÇ·Á¸é Á¤È®È÷ n°³ÀÇ ³ëµå¸¦ ¹æ¹®ÇÔ
+	// ì •ë ¬ì´ ì™„ì „ížˆ ìˆ˜í–‰ë˜ë ¤ë©´ ì •í™•ížˆ nê°œì˜ ë…¸ë“œë¥¼ ë°©ë¬¸í•¨
 	for(int i = 1; i <= n; i++) {
 		int x = q.front();
 		q.pop();
 		for(int j = 0; j < a[x].size(); j++) {
 			int y = a[x][j];
 			result[y] = max(result[y], result[x] + time[y]);
-			// »õ·Ó°Ô ÁøÀÔÂ÷¼ö°¡ 0ÀÌ µÈ Á¤Á¡À» Å¥¿¡ »ðÀÔ
+			// ìƒˆë¡­ê²Œ ì§„ìž…ì°¨ìˆ˜ê°€ 0ì´ ëœ ì •ì ì„ íì— ì‚½ìž…
 			if(--inDegree[y] == 0) {
 				q.push(y);
 			} 
