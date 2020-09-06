@@ -12,19 +12,19 @@ vector<int> a[MAX];
 vector<vector<int> > SCC;
 stack<int> s;
 
-// DFS ´Â ÃÑ Á¤Á¡ÀÇ °¹¼ö¸¸Å­ ½ÇÇàµÊ
+// DFS ëŠ” ì´ ì •ì ì˜ ê°¯ìˆ˜ë§Œí¼ ì‹¤í–‰ë¨
 int dfs(int x) {
-	d[x] = ++id; // ³ëµå¸¶´Ù °íÀ¯ÇÑ ¹øÈ£¸¦ ÇÒ´ç
-	s.push(x); // ½ºÅÃ¿¡ ÀÚ±â ÀÚ½ÅÀ» »ğÀÔ
+	d[x] = ++id; // ë…¸ë“œë§ˆë‹¤ ê³ ìœ í•œ ë²ˆí˜¸ë¥¼ í• ë‹¹
+	s.push(x); // ìŠ¤íƒì— ìê¸° ìì‹ ì„ ì‚½ì…
 	
 	int parent = d[x];
 	for(int i = 0; i < a[x].size(); i++) {
 		int y = a[x][i];
-		if(d[y] == 0) parent = min(parent, dfs(y)); // ¹æ¹®ÇÏÁö ¾ÊÀº ÀÌ¿ô
-		else if(!finished[y]) parent = min(parent, d[y]); // Ã³¸®ÁßÀÎ ÀÌ¿ô 
+		if(d[y] == 0) parent = min(parent, dfs(y)); // ë°©ë¬¸í•˜ì§€ ì•Šì€ ì´ì›ƒ
+		else if(!finished[y]) parent = min(parent, d[y]); // ì²˜ë¦¬ì¤‘ì¸ ì´ì›ƒ 
 	} 
 	
-	if(parent == d[x]) { // ºÎ¸ğ³ëµå°¡ ÀÚ±â ÀÚ½ÅÀÎ °æ¿ì 
+	if(parent == d[x]) { // ë¶€ëª¨ë…¸ë“œê°€ ìê¸° ìì‹ ì¸ ê²½ìš° 
 		vector<int> scc;
 		while(1) {
 			int t = s.top();
@@ -36,7 +36,7 @@ int dfs(int x) {
 		SCC.push_back(scc);
 	} 
 	
-	// ÀÚ½ÅÀÇ ºÎ¸ğ °ªÀ» ¹İÈ¯ÇÕ´Ï´Ù. 
+	// ìì‹ ì˜ ë¶€ëª¨ ê°’ì„ ë°˜í™˜í•©ë‹ˆë‹¤. 
 	return parent;	
 }
 
@@ -59,9 +59,9 @@ int main(void) {
 	for(int i = 1; i <= v; i++) {
 		if(d[i] == 0) dfs(i);
 	}
-	printf("SCCÀÇ °¹¼ö: %d\n", SCC.size());
+	printf("SCCì˜ ê°¯ìˆ˜: %d\n", SCC.size());
 	for(int i = 0; i < SCC.size(); i++) {
-		printf("%d¹øÂ° SCC: ", i + 1);
+		printf("%dë²ˆì§¸ SCC: ", i + 1);
 		for(int j = 0; j < SCC[i].size(); j++) {
 			printf("%d ", SCC[i][j]);
 		}
