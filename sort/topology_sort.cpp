@@ -12,15 +12,15 @@ vector<int> a[MAX];
 void topologySort() {
 	int result[MAX];
 	queue<int> q;
-	// ÁøÀÔ Â÷¼ö°¡ 0ÀÎ ³ëµå¸¦ Å¥¿¡ »ðÀÔ 
+	// ì§„ìž… ì°¨ìˆ˜ê°€ 0ì¸ ë…¸ë“œë¥¼ íì— ì‚½ìž… 
 	for(int i = 1; i <= n; i++) {
 		if(inDegree[i] == 0) q.push(i);
 	} 
-	// À§»ó Á¤·ÄÀÌ ¿ÏÀüÈ÷ ¼öÇàµÇ·Á¸é Á¤È®È÷ N°³ÀÇ ³ëµå¸¦ ¹æ¹®ÇØ¾ßÇÔ 
+	// ìœ„ìƒ ì •ë ¬ì´ ì™„ì „ížˆ ìˆ˜í–‰ë˜ë ¤ë©´ ì •í™•ížˆ Nê°œì˜ ë…¸ë“œë¥¼ ë°©ë¬¸í•´ì•¼í•¨ 
 	for(int i = 1; i <= n; i++) {
-		// n°³¸¦ ¹æ¹®ÇÏ±â Àü¿¡ Å¥°¡ ºó´Ù¸é »çÀÌÅ¬ÀÌ ¹ß»ýÇÑ °Í 
+		// nê°œë¥¼ ë°©ë¬¸í•˜ê¸° ì „ì— íê°€ ë¹ˆë‹¤ë©´ ì‚¬ì´í´ì´ ë°œìƒí•œ ê²ƒ 
 		if(q.empty()) {
-			printf("»çÀÌÅ¬ÀÌ ¹ß»ýÇß½À´Ï´Ù.");
+			printf("ì‚¬ì´í´ì´ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
 			return; 
 		}
 		int x = q.front();
@@ -28,7 +28,7 @@ void topologySort() {
 		result[i] = x;
 		for(int i = 0; i < a[x].size(); i++) {
 			int y = a[x][i];
-			// »õ·Ó°Ô ÁøÀÔÂ÷¼ö°¡ 0ÀÌ µÈ Á¤Á¡À» Å¥¿¡ »ðÀÔ  
+			// ìƒˆë¡­ê²Œ ì§„ìž…ì°¨ìˆ˜ê°€ 0ì´ ëœ ì •ì ì„ íì— ì‚½ìž…  
 			if(--inDegree[y] == 0) {
 				q.push(y);
 			}
